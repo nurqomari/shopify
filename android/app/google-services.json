@@ -1,0 +1,114 @@
+{
+  "project_info": {
+    "project_number": "731070217863",
+    "firebase_url": "https://micro-liberty-289504.firebaseio.com",
+    "project_id": "micro-liberty-289504",
+    "storage_bucket": "micro-liberty-289504.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:731070217863:android:37d44f86f6c0714dd20222",
+        "android_client_info": {
+          "package_name": "com.codingwithflutter.firebase_auth_demo_flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "731070217863-jbrlij0a9usf4hldhdj0e9670ni7lar4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.codingwithflutter.firebase_auth_demo_flutter",
+            "certificate_hash": "8181f73c515b4671b64d807f8d3740807d5fade8"
+          }
+        },
+        {
+          "client_id": "731070217863-qht16e89lk4igdphm4ehdu6jmnd76pva.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrzT2n2OLnPHAoKn6pbkuV6u1-JM-TbKs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "731070217863-qht16e89lk4igdphm4ehdu6jmnd76pva.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:731070217863:android:743054d47faadbbfd20222",
+        "android_client_info": {
+          "package_name": "com.mydunia.registrationlogin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "731070217863-qht16e89lk4igdphm4ehdu6jmnd76pva.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrzT2n2OLnPHAoKn6pbkuV6u1-JM-TbKs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "731070217863-qht16e89lk4igdphm4ehdu6jmnd76pva.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:731070217863:android:ccc71c96c4a83ad7d20222",
+        "android_client_info": {
+          "package_name": "com.shopify.ecommerce"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "731070217863-k27rrjicktmhgh7mcc78e2mrnkibee7e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.shopify.ecommerce",
+            "certificate_hash": "8181f73c515b4671b64d807f8d3740807d5fade8"
+          }
+        },
+        {
+          "client_id": "731070217863-qht16e89lk4igdphm4ehdu6jmnd76pva.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrzT2n2OLnPHAoKn6pbkuV6u1-JM-TbKs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "731070217863-qht16e89lk4igdphm4ehdu6jmnd76pva.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
