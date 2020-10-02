@@ -61,10 +61,6 @@ class FirebaseAuthService implements AuthService {
     if (googleUser != null) {
       final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
       if (googleAuth.accessToken != null) {
-//        googleUser.authentication.then((GoogleSignInAuthentication auth) async {
-//          print(auth.idToken);
-//          print(auth.accessToken);
-//        });
         final user = new User(uid: googleUser.id, email: googleUser.email);
         usr = user;
         _userFromFirebase(user);
