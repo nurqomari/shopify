@@ -11,6 +11,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_ecommerce_app/src/pages/mainPage.dart';
 
 class SignInPageBuilder extends StatelessWidget {
   // P<ValueNotifier>
@@ -62,6 +63,7 @@ class SignInPage extends StatelessWidget {
     try {
       var user =  await manager.signInWithGoogle();
       print(user.toString());
+      if (user == null) {SignInPageBuilder();}else{MainPage();}
     } on PlatformException catch (e) {
       if (e.code != 'ERROR_ABORTED_BY_USER') {
         _showSignInError(context, e);
@@ -73,6 +75,7 @@ class SignInPage extends StatelessWidget {
     try {
       var user = await manager.signInWithFacebook();
       print(user.toString());
+      if (user == null) {SignInPageBuilder();}else{MainPage();}
     } on PlatformException catch (e) {
       if (e.code != 'ERROR_ABORTED_BY_USER') {
         _showSignInError(context, e);

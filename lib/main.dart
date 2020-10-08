@@ -6,6 +6,7 @@ import 'package:flutter_ecommerce_app/src/widgets/customRoute.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:flutter_ecommerce_app/app/landing_page.dart';
+import 'package:flutter_ecommerce_app/app/sign_in/sign_in_page.dart';
 import 'package:flutter_ecommerce_app/services/auth_service.dart';
 import 'package:flutter_ecommerce_app/services/auth_service_adapter.dart';
 import 'package:provider/provider.dart';
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.indigo,
         ),
-        home: LandingPage(),
+        home: SignInPageBuilder(),
         routes: Routes.getRoute(),
       ),
     );
