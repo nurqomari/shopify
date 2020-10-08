@@ -11,6 +11,11 @@ class User {
 
   final String uid;
   final String email;
+
+  @override
+  String toString() {
+    return "user email: $email, user uid: $uid";
+  }
 }
 
 abstract class AuthService {
