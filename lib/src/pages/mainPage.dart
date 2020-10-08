@@ -8,6 +8,7 @@ import 'package:flutter_ecommerce_app/src/widgets/title_text.dart';
 import 'package:flutter_ecommerce_app/src/widgets/extentions.dart';
 
 import 'dart:async';
+import 'package:flutter_ecommerce_app/app/sign_in/sign_in_page.dart';
 
 import 'package:flutter_ecommerce_app/common_widgets/platform_alert_dialog.dart';
 import 'package:flutter_ecommerce_app/constants/strings.dart';
@@ -27,6 +28,7 @@ Future<void> _signOut(BuildContext context) async {
   try {
     final AuthService auth = Provider.of<AuthService>(context);
     await auth.signOut();
+    Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => SignInPageBuilder()));
   } catch (e) {
     print(e.toString());
   }

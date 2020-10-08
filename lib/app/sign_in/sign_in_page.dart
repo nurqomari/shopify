@@ -77,7 +77,9 @@ class SignInPage extends StatelessWidget {
     try {
       var user = await manager.signInWithFacebook();
       print(user.toString());
-      if (user == null) {SignInPageBuilder();}else{MainPage();}
+      if (user!= null){
+        Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => MainPage()));
+      }
     } on PlatformException catch (e) {
       if (e.code != 'ERROR_ABORTED_BY_USER') {
         _showSignInError(context, e);
