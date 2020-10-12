@@ -4,13 +4,22 @@ import 'package:meta/meta.dart';
 
 @immutable
 class User {
-  const User({
-    @required this.uid,
-    this.email,
-  });
+  User(this.email, this.uid);
 
-  final String uid;
-  final String email;
+  String uid;
+  String email;
+
+  User.parse(json) {
+    try {
+      email = json["email"];
+      uid = json["uid"];
+    } catch (e, stacktrace) {
+      print(e.toString());
+      print(stacktrace.toString());
+    }
+
+    print(this.toString());
+  }
 
   @override
   String toString() {

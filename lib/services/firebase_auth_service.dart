@@ -15,10 +15,7 @@ class FirebaseAuthService implements AuthService {
     if (user == null) {
       yield null;
     }
-    yield User(
-      uid: user.uid,
-      email: user.email,
-    );
+    yield User(user.email, user.uid);
   }
 
   @override
@@ -61,13 +58,10 @@ class FirebaseAuthService implements AuthService {
     if (googleUser != null) {
       final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
       if (googleAuth.accessToken != null) {
-        final user = new User(uid: googleUser.id, email: googleUser.email);
+        final user = new User(googleUser.email,googleUser.id);
         usr = user;
         _userFromFirebase(user);
-        return  User(
-          uid: user.uid,
-          email: user.email,
-        );
+        return  User(user.email,user.uid);
       } else {
         throw PlatformException(code: 'ERROR_MISSING_GOOGLE_AUTH_TOKEN', message: 'Missing Google Auth Token');
       }
@@ -85,14 +79,11 @@ class FirebaseAuthService implements AuthService {
       final graphResponse = await http.get(
           'https://graph.facebook.com/v2.12/me?fields=name,first_name,last_name,email&access_token=${result.accessToken.token}');
       final profile = json.decode(graphResponse.body);
-      final user = new User(uid:profile['id'] , email:profile['email']);
+      final user = new User(profile['email'], profile['id']);
 
       usr = user;
       _userFromFirebase(user);
-      return  User(
-        uid: user.uid,
-        email: user.email,
-      );
+      return  User(user.email, user.uid);
 
     } else {
       throw PlatformException(code: 'ERROR_ABORTED_BY_USER', message: 'Sign in aborted by user');
@@ -102,10 +93,7 @@ class FirebaseAuthService implements AuthService {
   @override
   Future<User> currentUser() async {
 //    final FirebaseUser user = await _firebaseAuth.currentUser();
-    return  User(
-      uid: usr.uid,
-      email: usr.email,
-    );
+    return  User(usr.email, usr.uid);
   }
 
   @override

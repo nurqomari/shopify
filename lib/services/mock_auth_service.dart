@@ -44,7 +44,7 @@ class MockAuthService implements AuthService {
         message: 'The email address is already registered. Sign in instead?',
       );
     }
-    final User user = User(uid: random.randomAlphaNumeric(32), email: email);
+    final User user = User(email, random.randomAlphaNumeric(32));
     _usersStore[email] = _UserData(password: password, user: user);
     _add(user);
     return user;
@@ -86,7 +86,8 @@ class MockAuthService implements AuthService {
   @override
   Future<User> signInAnonymously() async {
     await Future<void>.delayed(responseTime);
-    final User user = User(uid: random.randomAlphaNumeric(32));
+    String email = "dummy@gmail.com";
+    final User user = User(email, random.randomAlphaNumeric(32));
     _add(user);
     return user;
   }
@@ -94,7 +95,8 @@ class MockAuthService implements AuthService {
   @override
   Future<User> signInWithFacebook() async {
     await Future<void>.delayed(responseTime);
-    final User user = User(uid: random.randomAlphaNumeric(32));
+    String email = "dummy@gmail.com";
+    final User user = User(email, random.randomAlphaNumeric(32));
     _add(user);
     return user;
   }
@@ -102,7 +104,8 @@ class MockAuthService implements AuthService {
   @override
   Future<User> signInWithGoogle() async {
     await Future<void>.delayed(responseTime);
-    final User user = User(uid: random.randomAlphaNumeric(32));
+    String email = "dummy@gmail.com";
+    final User user = User(email, random.randomAlphaNumeric(32));
     _add(user);
     return user;
   }

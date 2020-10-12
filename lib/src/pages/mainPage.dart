@@ -14,6 +14,7 @@ import 'package:flutter_ecommerce_app/common_widgets/platform_alert_dialog.dart'
 import 'package:flutter_ecommerce_app/constants/strings.dart';
 import 'package:flutter_ecommerce_app/services/auth_service.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_ecommerce_app/util/session_manager.dart';
 
 class MainPage extends StatefulWidget {
   MainPage({Key key, this.title}) : super(key: key);
@@ -28,7 +29,12 @@ Future<void> _signOut(BuildContext context) async {
   try {
     final AuthService auth = Provider.of<AuthService>(context);
     await auth.signOut();
-    Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => SignInPageBuilder()));
+    var session = SessionManager();
+    bool isClear = await session.clear();
+    if (isClear) {
+      Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => SignInPageBuilder()));
+    }
+
   } catch (e) {
     print(e.toString());
   }

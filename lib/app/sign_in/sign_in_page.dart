@@ -12,6 +12,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_ecommerce_app/src/pages/mainPage.dart';
+import 'package:flutter_ecommerce_app/util/session_manager.dart';
 
 class SignInPageBuilder extends StatelessWidget {
   // P<ValueNotifier>
@@ -63,6 +64,8 @@ class SignInPage extends StatelessWidget {
     try {
       var user =  await manager.signInWithGoogle();
       print(user.toString());
+      SessionManager session = SessionManager();
+      session.setLogin(user);
       if (user!= null){
        Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => MainPage()));
       }
@@ -77,6 +80,8 @@ class SignInPage extends StatelessWidget {
     try {
       var user = await manager.signInWithFacebook();
       print(user.toString());
+      SessionManager session = SessionManager();
+      session.setLogin(user);
       if (user!= null){
         Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => MainPage()));
       }
